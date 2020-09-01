@@ -1,8 +1,21 @@
+#  ____        _             _       ____        _       
+# |  _ \ _   _| | _____  ___( )___  |  _ \  ___ | |_ ___ 
+# | |_) | | | | |/ / _ \/ _ \// __| | | | |/ _ \| __/ __|
+# |  __/| |_| |   <  __/  __/ \__ \ | |_| | (_) | |_\__ \
+# |_|    \__, |_|\_\___|\___| |___/ |____/ \___/ \__|___/
+#        |___/                                           
+
+
 # Path to your oh-my-zsh installation.
 export ZSH=/home/$USER/.oh-my-zsh
 
+# Powerlevel9k
+source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
+
+# Left Propt Elements
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh host dir vcs)
+
 # Uncommented Configs
-ZSH_THEME="robbyrussell"
 DISABLE_UPDATE_PROMPT="true"
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"

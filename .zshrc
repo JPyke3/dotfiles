@@ -10,10 +10,10 @@
 export ZSH=/home/$USER/.oh-my-zsh
 
 # Powerlevel9k
-source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
+ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Left Propt Elements
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh host dir vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(host dir vcs)
 
 # Uncommented Configs
 DISABLE_UPDATE_PROMPT="true"

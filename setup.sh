@@ -10,7 +10,7 @@ export RUNZSH=no
 if [ -f /bin/pacman ]; then
     echo -e "${RED}Arch Linux Detected${NC}"
     sudo pacman -S neofetch zsh emacs vim
-elif [ -f /bin/apt ]; then
+elif [ -f /usr/bin/apt ]; then
     echo -e "${RED}Debian Variant Detected${NC}"
     sudo apt install neofetch zsh emacs vim
 elif [ -f /usr/local/bin/brew ]; then
@@ -18,6 +18,7 @@ elif [ -f /usr/local/bin/brew ]; then
     brew install neofetch zsh emacs vim
 else
     echo -e "${RED}This OS Isn't Supported, aborting!${NC}"
+    /bin/zsh
 fi
 
 # Move Existing Configs

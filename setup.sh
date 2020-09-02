@@ -93,7 +93,7 @@ mkdir ~/.vim/undodir -p
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 vim +'PlugInstall --sync' +qa
 cd ~/.vim/plugged/YouCompleteMe
-python3 install.py --all
+YCM_CORES=1 python3 install.py --all
 cd ~/. 
 
 # Clean Up

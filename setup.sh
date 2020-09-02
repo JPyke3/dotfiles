@@ -18,7 +18,7 @@ elif [ -f /usr/local/bin/brew ]; then
     brew install neofetch zsh emacs vim cmake go
 else
     echo -e "${RED}This OS Isn't Supported, aborting!${NC}"
-    /bin/zsh
+    exit 1
 fi
 
 # Move Existing Configs
@@ -38,9 +38,18 @@ fi
 # Zsh addons
 echo -e "${RED}Installing some Zsh plugins${NC}"
 # Install zsh autocomplete
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+if [ -d ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]; then
+    echo -e "${RED}Zsh Autosuggestions already installed!"
+else
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+fi
+
 # Install powerlevel9k
-git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+if [ -d ~/.oh-my-zsh/custom/themes/powerlevel9k ]; then
+    echo -e "${RED}powerlevel9k already installed!"
+else
+    git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+fi
 
 # Install Spacemacs
 if [ -d ~/.emacs.d ]; then

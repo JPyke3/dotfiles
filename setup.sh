@@ -16,7 +16,7 @@ if [ -f /bin/pacman ]; then
         makepkg -si
     fi
     yay -S polybar neofetch zsh emacs vim cmake go
-elif [ -f /usr/bin/apt ]; then
+elif [ -f /usr/bin/apt-get ]; then
     echo -e "${RED}Debian Variant Detected${NC}"
     sudo apt install neofetch zsh emacs vim-nox cmake golang
 elif [ -f /usr/local/bin/brew ]; then

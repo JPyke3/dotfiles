@@ -102,6 +102,6 @@ rm -rf ~/dotfiles
 
 # New shell to get new configs
 clear
-/bin/neofetch
+neofetch
 echo -e "${RED}Installation Successful${NC}"
 exec /bin/zsh

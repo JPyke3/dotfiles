@@ -29,6 +29,7 @@ fi
 
 # Move Existing Configs
 echo -e "${RED}Backing up existing config files${NC}"
+cd ~/.
 mv .spacemacs .spacemacs.old
 mv .zshrc .zshrc.old
 mv .vimrc .vimrc.old

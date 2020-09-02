@@ -87,6 +87,9 @@ mv ~/dotfiles/.config/i3/config ~/.config/i3/config
 
 # Make vim dir
 echo -e "${RED}Configuring Vim${NC}"
+if [ -d ~/.vim ]; then
+    mv ~/.vim ~/.vim.old
+fi
 mkdir ~/.vim/undodir -p
 
 # Vim Plugins

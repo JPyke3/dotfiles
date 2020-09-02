@@ -12,7 +12,7 @@ if [ -f /bin/pacman ]; then
     sudo pacman -S neofetch zsh emacs vim cmake go
 elif [ -f /usr/bin/apt ]; then
     echo -e "${RED}Debian Variant Detected${NC}"
-    sudo apt install neofetch zsh emacs vim-nox cmake go
+    sudo apt install neofetch zsh emacs vim-nox cmake golang
 elif [ -f /usr/local/bin/brew ]; then
     echo -e "${RED}MacOS Detected${NC}"
     brew install neofetch zsh emacs vim cmake go

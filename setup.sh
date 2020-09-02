@@ -22,6 +22,8 @@ elif [ -f /usr/bin/apt-get ]; then
 elif [ -f /usr/local/bin/brew ]; then
     echo -e "${RED}MacOS Detected${NC}"
     brew install neofetch zsh emacs vim cmake go
+    brew tap homebrew/cask-fonts
+    brew cask install font-hack-nerd-font
 else
     echo -e "${RED}This OS Isn't Supported, aborting!${NC}"
     exit 1
@@ -88,7 +90,13 @@ git clone https://github.com/JPyke3/dotfiles
 echo -e "${RED}Moving Dots!${NC}"
 for file in * ~/dotfiles/.*
 do
-    test -f "$file" && mv "$file" "$HOME"
+    if [[ "$file" == ".hyper.js" ]]; then
+        if [ -f /usr/local/lib/brew ]; then
+            test -f "$file" && mv "files" "$HOME"
+        fi
+    else 
+        test -f "$file" && mv "$file" "$HOME"
+    fi
 done
 
 # Make i3 dir

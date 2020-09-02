@@ -1,0 +1,4 @@
+# Time
+[Time]
+command=date +%c
+interval=1

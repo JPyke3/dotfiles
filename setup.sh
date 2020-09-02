@@ -9,7 +9,13 @@ export RUNZSH=no
 # Install some software
 if [ -f /bin/pacman ]; then
     echo -e "${RED}Arch Linux Detected${NC}"
-    sudo pacman -S neofetch zsh emacs vim cmake go
+    if [ ! -f /bin/yay ]; then
+        echo -e "${RED}Yay isn't present${NC}"
+        git clone https://aur.archlinux.org/yay.git /tmp/yay
+        cd /tmp/yay
+        makepkg -si
+    fi
+    yay -S polybar neofetch zsh emacs vim cmake go
 elif [ -f /usr/bin/apt ]; then
     echo -e "${RED}Debian Variant Detected${NC}"
     sudo apt install neofetch zsh emacs vim-nox cmake golang

@@ -9,13 +9,13 @@ export RUNZSH=no
 # Install some software
 if [ -f /bin/pacman ]; then
     echo -e "${RED}Arch Linux Detected${NC}"
-    sudo pacman -S neofetch zsh emacs vim cmake
+    sudo pacman -S neofetch zsh emacs vim cmake go
 elif [ -f /usr/bin/apt ]; then
     echo -e "${RED}Debian Variant Detected${NC}"
-    sudo apt install neofetch zsh emacs vim cmake
+    sudo apt install neofetch zsh emacs vim-nox cmake go
 elif [ -f /usr/local/bin/brew ]; then
     echo -e "${RED}MacOS Detected${NC}"
-    brew install neofetch zsh emacs vim cmake
+    brew install neofetch zsh emacs vim cmake go
 else
     echo -e "${RED}This OS Isn't Supported, aborting!${NC}"
     /bin/zsh
@@ -96,7 +96,12 @@ mkdir ~/.vim/undodir -p
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 vim +'PlugInstall --sync' +qa
 cd ~/.vim/plugged/YouCompleteMe
-YCM_CORES=1 python3 install.py --all
+if [ -f /usr/bin/raspi-config ]; then
+    echo -e "${RED}Raspberry Pi Detected!${NC}"
+    YCM_CORES=1 python3 install.py --all
+else
+    python3 install.py --all
+fi
 cd ~/. 
 
 # Clean Up

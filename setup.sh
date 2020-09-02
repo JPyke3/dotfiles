@@ -9,13 +9,13 @@ export RUNZSH=no
 # Install some software
 if [ -f /bin/pacman ]; then
     echo -e "${RED}Arch Linux Detected${NC}"
-    sudo pacman -S neofetch zsh emacs vim
+    sudo pacman -S neofetch zsh emacs vim cmake
 elif [ -f /usr/bin/apt ]; then
     echo -e "${RED}Debian Variant Detected${NC}"
-    sudo apt install neofetch zsh emacs vim
+    sudo apt install neofetch zsh emacs vim cmake
 elif [ -f /usr/local/bin/brew ]; then
     echo -e "${RED}MacOS Detected${NC}"
-    brew install neofetch zsh emacs vim
+    brew install neofetch zsh emacs vim cmake
 else
     echo -e "${RED}This OS Isn't Supported, aborting!${NC}"
     /bin/zsh

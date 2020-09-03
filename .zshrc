@@ -39,3 +39,7 @@ export LANG=en_US.UTF-8
 alias emacs='emacs -nw'
 alias cd='pushd'
 alias 'cd ..'='popd'
+
+# 100% Necissary
+autoload -Uz tetriscurses
+alias tetris=tetriscurses

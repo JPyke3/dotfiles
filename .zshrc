@@ -29,7 +29,7 @@ export MANPATH="/usr/local/man:$MANPATH"
 export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-export EDITOR=vim
+export EDITOR='vim'
 
 # Aliases
 alias emacs='emacs -nw'

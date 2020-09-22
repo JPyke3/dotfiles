@@ -9,6 +9,8 @@ export RUNZSH=no
 # Install some software
 if [ -f /bin/pacman ]; then
     echo -e "${RED}Arch Linux Detected${NC}"
+    echo -e "Installing Fakeroot"
+    sudo pacman -S fakeroot
     if [ ! -f /bin/yay ]; then
         echo -e "${RED}Yay isn't present${NC}"
         git clone https://aur.archlinux.org/yay.git /tmp/yay
